@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]   # use except bc signup is the new route
+
 end
