@@ -4,6 +4,9 @@
     <%= gravatar_for @user, size: 150  %>
   </div>
 </div>
+<% if logged_in? && current_user.admin? %>
+  <h4 align="center">Admin User</h4>
+<% end %>
 <h4 align="center"><%= @user.username %>'s Articles</h4>
 <div class="center">
   <%= will_paginate @user_articles %>
